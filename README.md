@@ -1,6 +1,6 @@
 # Cloudflare Worker - GitHub repository releases
 
-Get notified on Slack when a new release of your favorite repositories is released.
+Get notified on Slack when a new version of your favorite repositories is released.
 Using **Cloudflare Workers**, **CRON Triggers** and **KV storage**.
 
 ![slack-screenshot.png](slack-screenshot.png)
@@ -43,7 +43,7 @@ You can either deploy with **Cloudflare Deploy Button** using GitHub Actions or 
    - Value: your-porsonal-read-github-token
    ```
 
-3. Adjust `index.js` to list all of your repositories you want to watch
+3. Adjust [index.js](index.js) to list all of your repositories you want to watch
    ```javascript
    const githubRepositories = [
      'adam-janis/cf-workers-github-releases',
