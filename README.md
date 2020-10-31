@@ -3,6 +3,8 @@
 Get notified on Slack when a new release of your favorite repositories is released.
 Using **Cloudflare Workers**, **CRON Triggers** and **KV storage**.
 
+![slack-screenshot.png](slack-screenshot.png)
+
 ## Pre-requisites
 
 You'll need a [Cloudflare Workers account](https://dash.cloudflare.com/sign-up/workers) with
@@ -58,7 +60,7 @@ You can either deploy with **Cloudflare Deploy Button** using GitHub Actions or 
 
 You can clone the repository yourself and use Wrangler CLI to develop/deploy, extra list of things you need to take care of:
 
-- create KV namespace and add the `KV_GITHUB_RELEASES` binding to `wrangler.toml`
+- create KV namespace and add the `KV_GITHUB_RELEASES` binding to [wrangler.toml](wrangler.toml)
 - create Worker secrets
   - `SECRET_SLACK_WEBHOOK_URL`
   - `SECRET_GITHUB_TOKEN`
