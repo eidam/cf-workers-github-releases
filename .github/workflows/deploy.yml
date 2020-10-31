@@ -1,0 +1,31 @@
+
+name: Deploy to Cloudflare Worker
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish
+        uses: cloudflare/wrangler-action@1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          preCommands: |
+            wrangler kv:namespace create KV_GITHUB_RELEASES
+            apt-get update && apt-get install -y jq
+            kv_namespace_id=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_GITHUB_RELEASES")))' | jq ".[0].id")
+            echo "kv_namespaces = [{binding=\"KV_GITHUB_RELEASES\", id=${kv_namespace_id}}]" >> wrangler.toml
+          secrets: |
+            SECRET_SLACK_WEBHOOK_URL
+            SECRET_GITHUB_TOKEN
+        env:
+          CF_ACCOUNT_ID: ${{secrets.CF_ACCOUNT_ID}}
+          SECRET_SLACK_WEBHOOK_URL: ${{secrets.SECRET_SLACK_WEBHOOK_URL}}
+          SECRET_GITHUB_TOKEN: ${{secrets.SECRET_GITHUB_TOKEN}}
