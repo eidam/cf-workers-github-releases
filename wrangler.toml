@@ -7,3 +7,6 @@ zone_id = ""
 
 # uncomment and adjust following if you are not using GitHub Actions
 # kv_namespaces = [{binding="KV_GITHUB_RELEASES", id="xxxx"}]
+
+[triggers]
+crons = ["* * * * *"]

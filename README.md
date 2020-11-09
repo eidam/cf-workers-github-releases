@@ -29,11 +29,9 @@ You can either deploy with **Cloudflare Deploy Button** using GitHub Actions or 
 2. Navigate to your new **GitHub repository &gt; Settings &gt; Secrets** and add the following secrets:
 
    ```text
-   - Name: CF_API_TOKEN
-   - Value: your-cloudflare-api-token-for-workers-deployment
-
-   - Name: CF_ACCOUNT_ID
-   - Value: your-cloudflare-account-id
+   - Name: CF_API_TOKEN (should be added automatically)
+   
+   - Name: CF_ACCOUNT_ID (should be added automatically)
 
    - Name: SECRET_SLACK_WEBHOOK_URL
    - Value: your-slack-webhook-url
@@ -54,8 +52,7 @@ You can either deploy with **Cloudflare Deploy Button** using GitHub Actions or 
    ```
 
 4. Push to `main` branch to trigger the deployment
-5. Navigate to deployed Cloudflare Worker and **enable CRON Trigger** \([https://developers.cloudflare.com/workers/platform/cron-triggers](https://developers.cloudflare.com/workers/platform/cron-triggers)\)
-6. 🎉
+5. 🎉
 
 ### Deploy on your own
 
