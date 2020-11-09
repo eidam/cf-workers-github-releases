@@ -23,7 +23,7 @@ You can either deploy with **Cloudflare Deploy Button** using GitHub Actions or 
 
 ### Deploy with Cloudflare Deploy Button
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button?paid=true)](https://deploy.workers.cloudflare.com/?url=https://github.com/adam-janis/cf-workers-github-releases&paid=true)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button?paid=true)](https://deploy.workers.cloudflare.com/?url=https://github.com/eidam/cf-workers-github-releases&paid=true)
 
 1. Click the button and follow the instructions, you should end up with a clone of this repository
 2. Navigate to your new **GitHub repository &gt; Settings &gt; Secrets** and add the following secrets:
@@ -46,7 +46,7 @@ You can either deploy with **Cloudflare Deploy Button** using GitHub Actions or 
 
    ```javascript
    const githubRepositories = [
-     'adam-janis/cf-workers-github-releases',
+     'eidam/cf-workers-github-releases',
      'cloudflare/wrangler',
      'cloudflare/wrangler-action',
      '...',
